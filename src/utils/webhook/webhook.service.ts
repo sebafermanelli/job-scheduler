@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 
-import { WebhookServiceInterface } from './webhook.interface';
+import { WebhookServiceInterface } from './webhook.service.interface';
 
 @Injectable()
 export class WebhookService implements WebhookServiceInterface {
