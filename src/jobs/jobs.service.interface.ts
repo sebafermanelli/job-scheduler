@@ -1,5 +1,6 @@
 import { Agenda, Job } from 'agenda';
 import { CreateJobDto } from './dto/create-job.dto';
+import { RescheduleJobDto } from './dto/reschedule-job.dto';
 
 export interface JobsServiceInterface {
   /**
@@ -26,6 +27,14 @@ export interface JobsServiceInterface {
    * @returns The job or null if no job was found
    */
   findById(id: string): Promise<Job | null>;
+
+  /**
+   * Reschedule a job by its ID
+   * @param id - The ID of the job to reschedule
+   * @param jobData - The data to reschedule the job
+   * @returns The rescheduled job
+   */
+  reschedule(id: string, jobData: RescheduleJobDto): Promise<Job>;
 
   /**
    * Cancel a job by its ID
